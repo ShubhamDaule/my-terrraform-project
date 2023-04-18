@@ -5,34 +5,67 @@ version    = "2.7"
 version    = ">= 2.8"
 version    = "<= 2.8"
 version    = ">=2.10,<=2.30"
+version    = "~> 2.8"
 ```
 
-### Base Configuration - provider.versioning.tf
-
+### AWS Provider
 ```sh
-provider "aws" {
-  region     = "us-east-4"
-  access_key = "YOUR-ACCESS-KEY"
-  secret_key = "YOUR-SECRET-KEY"
-  version    = ">=2.10,<=2.30"
-}
-
-resource "aws_instance" "my_first_ec2" {
-   ami = "ami-082b5a644766e0e6f"
-   instance_type = "t2.micro"
-}
-```
-
-
 terraform {
   required_providers {
-    google = {
-      source = "hashicorp/google"
-      version = "4.62.0"
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.0"
     }
   }
 }
 
-provider "google" {
-  # Configuration options
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "PUT-YOUR-ACCESS-KEY-HERE"
+  secret_key = "PUT-YOUR-SECRET-KEY-HERE"
 }
+```
+
+
+### Github Provider
+```sh
+terraform {
+  required_providers {
+    github = {
+      source = "integrations/github"
+      version = "~> 5.0"
+    }
+  }
+}
+
+provider "github" {
+  token = "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"
+}
+```
+
+### Digital Ocean Provider
+```sh
+terraform {
+  required_providers {
+    digitalocean = {
+      source = "digitalocean/digitalocean"
+      version = "2.5.0"
+    }
+  }
+}
+
+provider "digitalocean" {}
+```
+
+
+### example
+```sh
+terraform {
+    required_version = "~> 1.1.7" 
+    required_providers {
+     google = "~> 4.8.0"
+  }
+}
+provider "google" {
+}
+```

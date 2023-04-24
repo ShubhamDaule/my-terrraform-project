@@ -1,10 +1,10 @@
 Terraform will prefere variables in following line
 ```sh
-1. vale defined in resource
+1. Vaule defined in resource
 2. CLI Command (terraform plan -var="")
 3. CLI Command (terraform plan -var-file="")
 4. terraform.tfvars
-5. default value from variables.tf
+5. Default value from variables.tf
 ```
 
 ### CLI Commands

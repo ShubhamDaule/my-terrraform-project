@@ -1,4 +1,3 @@
-
 ### Different Version Parameters:
 ```sh
 version    = "2.7"
@@ -25,7 +24,6 @@ provider "aws" {
   secret_key = "PUT-YOUR-SECRET-KEY-HERE"
 }
 ```
-
 
 ### Github Provider
 ```sh
@@ -57,8 +55,7 @@ terraform {
 provider "digitalocean" {}
 ```
 
-
-### example
+### Version Dependency
 ```sh
 terraform {
     required_version = "~> 1.1.7" 

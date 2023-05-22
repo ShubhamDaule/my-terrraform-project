@@ -7,6 +7,7 @@ resource "aws_instance" "myFirstInstance" {
   tags = {
     Name = "myFirstInstance"
   }
+  
   user_data = <<EOF
     #!/bin/bash\n
     # Use this for your user data (script from top to bottom)\n
